@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WishDays</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="WishDays">
+<meta name="theme-color" content="#2f8f5b">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACvElEQVR42u3dwU3EMBBAUS/afqAfKIJOoAgKoiSuIKGVYG3PjOf9GxIHFD8mDgnZy+Pb85B+68EhEByCQ3AIDsEhOASH4BAcgkOCQ3AIDsEhOASH4BAcgkNwSHAIDsEhOASH4BAcgkNwCA4JDsEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwqEhXhyBPn68f3798en+J/XkuPqkpIYskRODIyyKciD1HARl/+k44BIexETo84Kghw+RQLlJwGBtwkAEHGXCQAQcZP9v8d1I4BIexAYetBhztZITclfWwj7OJyeFsAsdhxT4pCIcTChxkwEEGHGTAITiMjYRjAw4y4CADDjLgIAMOwWFswEFGMRlwkAEHGXBUkWFDqtpjAw4nlFtd0x76bAexm4yR5IVxOd+l11xGPI7M79JrLiN4z5H8XXqyITU28uHI/y695jKKTY7NPprLCMPx7+O+zQcZJfccG3yQUXhD6uIFjhgfxsYJl7IrfJARj2PW4Zvrg4xzJsdcH2QkwjHxON6/rna4Z06OPKt72NgIxjH3aMb+Ye08GSP/8xyrF4mM7KeVqP0HGTX2HPt9kFFpQ5rq+kXprla2+TA2Sl7KbvBBRlUcq32QURvHOh9knIBjhQ8yzsHh+gWOSr+prcbGKHHjLcmSdJMxqtyVDV+YhjJGoVv2gcvTU8ao9TxH20WCI6mPziLrPQm2c7Waz6qSjwnuWTNnsarPkK5eOTJG6QeM160fGeVxWEU4dvsA7hwcc5eTjNNwzFpUMs7Ecf/SknEyjnsWmIzzcVhmOCb74KkRDsExZxgYGzdK8V/268r/eQxw5CKCBRyy5xAcgkNwCA7BITgEhwSH4BAcgkNwCA7BITgEh+AQHBIcgkNwCA7BITgEh+AQHIJDgkNwCA7BITgEh+AQHIJDcEhwCA7BITi0sS8OhhyKZ1yGSwAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACvElEQVR42u3dwU3EMBBAUS/afqAfKIJOoAgKoiSuIKGVYG3PjOf9GxIHFD8mDgnZy+Pb85B+68EhEByCQ3AIDsEhOASH4BAcgkOCQ3AIDsEhOASH4BAcgkNwSHAIDsEhOASH4BAcgkNwCA4JDsEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwqEhXhyBPn68f3798en+J/XkuPqkpIYskRODIyyKciD1HARl/+k44BIexETo84Kghw+RQLlJwGBtwkAEHGXCQAQcZP9v8d1I4BIexAYetBhztZITclfWwj7OJyeFsAsdhxT4pCIcTChxkwEEGHGTAITiMjYRjAw4y4CADDjLgIAMOwWFswEFGMRlwkAEHGXBUkWFDqtpjAw4nlFtd0x76bAexm4yR5IVxOd+l11xGPI7M79JrLiN4z5H8XXqyITU28uHI/y695jKKTY7NPprLCMPx7+O+zQcZJfccG3yQUXhD6uIFjhgfxsYJl7IrfJARj2PW4Zvrg4xzJsdcH2QkwjHxON6/rna4Z06OPKt72NgIxjH3aMb+Ye08GSP/8xyrF4mM7KeVqP0HGTX2HPt9kFFpQ5rq+kXprla2+TA2Sl7KbvBBRlUcq32QURvHOh9knIBjhQ8yzsHh+gWOSr+prcbGKHHjLcmSdJMxqtyVDV+YhjJGoVv2gcvTU8ao9TxH20WCI6mPziLrPQm2c7Waz6qSjwnuWTNnsarPkK5eOTJG6QeM160fGeVxWEU4dvsA7hwcc5eTjNNwzFpUMs7Ecf/SknEyjnsWmIzzcVhmOCb74KkRDsExZxgYGzdK8V/268r/eQxw5CKCBRyy5xAcgkNwCA7BITgEhwSH4BAcgkNwCA7BITgEh+AQHBIcgkNwCA7BITgEh+AQHIJDgkNwCA7BITgEh+AQHIJDcEhwCA7BITi0sS8OhhyKZ1yGSwAAAABJRU5ErkJggg==">
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--text:#1f2420;--muted:#6b726c;--accent:#2f8f5b;--accent2:#e8f4ec;--line:#e3e0d8;--warn:#c0492f;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141815;--card:#1e241f;--text:#eef1ee;--muted:#9aa39c;--accent:#4cc486;--accent2:#22332a;--line:#2d352f;--warn:#e8765c}}
+:root[data-theme="dark"]{--bg:#141815;--card:#1e241f;--text:#eef1ee;--muted:#9aa39c;--accent:#4cc486;--accent2:#22332a;--line:#2d352f;--warn:#e8765c}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.4}
+main{max-width:480px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:24px;margin:8px 0 18px}
+h2{font-size:15px;margin:0 0 12px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:14px}
+.row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.big{font-size:44px;font-weight:700;line-height:1;color:var(--accent)}
+.sub{color:var(--muted);font-size:13px}
+.dots{display:flex;gap:6px;margin:12px 0}
+.dot{flex:1;text-align:center;font-size:11px;color:var(--muted)}
+.dot i{display:block;height:26px;border-radius:8px;background:var(--accent2);border:1px solid var(--line);margin-bottom:3px}
+.dot.on i{background:var(--accent);border-color:var(--accent)}
+button{font:inherit;border:0;border-radius:12px;padding:12px 14px;cursor:pointer;background:var(--accent);color:#fff;font-weight:600}
+button.ghost{background:var(--accent2);color:var(--text)}
+button.full{width:100%}
+button.small{padding:6px 10px;font-size:12px}
+input{font:inherit;width:100%;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+.bar{height:16px;border-radius:99px;background:var(--accent2);overflow:hidden;margin:12px 0 6px;border:1px solid var(--line)}
+.bar>div{height:100%;background:var(--accent);width:0;transition:width .4s}
+.hist{list-style:none;padding:0;margin:12px 0 0;font-size:14px}
+.hist li{display:flex;justify-content:space-between;padding:8px 0;border-top:1px solid var(--line)}
+.neg{color:var(--warn)}
+.gap{display:flex;gap:8px;margin-top:10px}
+.tabs{display:flex;gap:6px;background:var(--accent2);border:1px solid var(--line);border-radius:14px;padding:4px;margin-bottom:16px}
+.tabs button{flex:1;background:transparent;color:var(--muted)}
+.tabs button.active{background:var(--accent);color:#fff}
+.task{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-top:1px solid var(--line)}
+.task label{display:flex;align-items:center;gap:10px;flex:1;cursor:pointer}
+.task input[type=checkbox]{width:22px;height:22px;padding:0;flex:none;accent-color:var(--accent)}
+.task.done .txt{text-decoration:line-through;color:var(--muted)}
+.task .x{background:transparent;color:var(--muted);padding:4px 8px}
+ul.tl{list-style:none;padding:0;margin:0}
+.tabs button{padding:10px 6px;font-size:13px}
+#auth{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px;padding-top:calc(20px + env(safe-area-inset-top,0px))}
+#auth .card{width:100%;max-width:380px;margin:0}
+#auth input{margin-bottom:10px}
+#amsg{color:var(--warn);font-size:13px;min-height:18px;margin-bottom:8px}
+.link{background:none;color:var(--accent);padding:12px 0 0;font-weight:500;width:100%}
+#toast{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:448px;margin:0 auto;background:var(--text);color:var(--bg);border-radius:14px;padding:10px 12px;display:none;align-items:center;justify-content:space-between;gap:10px;z-index:60;font-size:14px}
+#toast.show{display:flex}
+#toast button{background:var(--accent);padding:6px 14px}
+#adm{position:fixed;inset:0;z-index:55;background:var(--bg);overflow:auto;padding:16px;padding-top:calc(16px + env(safe-area-inset-top,0px))}
+#adm .card{max-width:480px;margin:0 auto}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:12px 0}
+.cal-h{text-align:center;font-size:11px;color:var(--muted)}
+.cal-d{padding:0;height:36px;border-radius:10px;background:var(--accent2);color:var(--text);font-weight:500;font-size:13px;border:1px solid var(--line)}
+.cal-d.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.cal-d.today{outline:2px solid var(--accent);outline-offset:1px}
+.cal-d:disabled{opacity:.35;cursor:default}
+.yg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 10px;margin-top:12px}
+.yd{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.yd i{display:block;aspect-ratio:1;border-radius:2px;background:var(--accent2);border:1px solid var(--line)}
+.yd i.on{background:var(--accent);border-color:var(--accent)}
+.yd i.today{outline:1.5px solid var(--text)}
+.title-input{font-size:20px;font-weight:700;border:0;background:transparent;padding:0;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div id="auth"><div class="card"><h1 style="margin-top:0">WishDays ✨</h1><div class="sub" style="margin-bottom:14px" id="asub"></div><form id="aform" onsubmit="submitAuth();return false;"><input id="auser" name="username" type="email" placeholder="Email" autocomplete="username" autocapitalize="none" inputmode="email"><input id="apass" name="password" type="password" placeholder="Password" autocomplete="current-password"><div id="amsg"></div><button class="full" id="abtn" type="submit">Log in</button></form><button class="link" id="aswitch" onclick="setMode(mode==='login'?'signup':'login')"></button><button class="link" id="aadmin" style="padding-top:6px;color:var(--muted)" onclick="setAdminMode()">🛡️ Admin login</button></div></div>
+<div id="toast"></div>
+<div id="adm" style="display:none"><div class="card"><div class="row"><h2 style="margin:0">🛡️ Admin</h2><button class="ghost small" onclick="closeAdmin()">Close</button></div><div id="admbody"></div></div></div>
+<main id="app" style="display:none">
+<h1>WishDays ✨</h1>
+<div class="tabs"><button id="tab-days" onclick="showTab('days')">📅 Daily Streaks</button><button id="tab-wish" onclick="showTab('wish')">🎯 My Wishes</button></div>
+<div id="streaks"></div>
+<div id="wish" style="display:none"></div>
+<div class="sub" style="text-align:center">Saved on this device only.<br><span id="who"></span> <button id="admbtn" class="ghost small" style="display:none" onclick="openAdmin()">Admin</button> <button class="ghost small" onclick="logout()">Log out</button></div>
+</main>
+<script>
+var KEY="wishTrackerV2";
+var state={streaks:[{id:"oil",name:"No oil",icon:"🫒",days:[]},{id:"sugar",name:"No sugar",icon:"🍬",days:[]}],wish:{name:"New phone",target:20000,log:[]}};
+try{var s=localStorage.getItem(KEY);if(s){var p=JSON.parse(s);if(p&&p.streaks&&p.wish)state=p;}}catch(e){}
+if(!state.goals)state.goals=[];if(!state.todos)state.todos=[];state.goals.forEach(function(g,i){state.streaks.push({id:"g"+i+Date.now(),name:g.text,icon:"⭐",days:g.days||[]});});state.goals=[];if(!state.wishes)state.wishes=[state.wish||{name:"New phone",target:20000,log:[]}];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function ds(d){var m=d.getMonth()+1,x=d.getDate();return d.getFullYear()+"-"+(m<10?"0"+m:m)+"-"+(x<10?"0"+x:x);}
+function back(n){var d=new Date();d.setDate(d.getDate()-n);return d;}
+function streakOf(days){var set={};days.forEach(function(x){set[x]=1;});var n=set[ds(back(0))]?0:1,c=0;while(set[ds(back(n))]){c++;n++;}return c;}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+function fmt(n){return Number(n).toLocaleString();}
+function renderStreaks(){
+  var today=ds(new Date()),names=["S","M","T","W","T","F","S"],h="";
+  state.streaks.forEach(function(st,i){
+    var done=st.days.indexOf(today)>-1,dots="";
+    for(var k=6;k>=0;k--){var d=back(k),on=st.days.indexOf(ds(d))>-1;dots+='<div class="dot'+(on?' on':'')+'" style="cursor:pointer" onclick="toggleDay('+i+','+k+')"><i></i>'+(k===0?'Today':k===1?'Yest.':names[d.getDay()])+'<br>'+d.getDate()+'</div>';}
+    h+='<div class="card"><div class="row"><div><h2>'+st.icon+' '+esc(st.name)+'</h2><div><span class="big">'+streakOf(st.days)+'</span> <span class="sub">day streak</span></div></div><div class="sub" style="text-align:right">Total: '+st.days.length+'<br><button class="ghost small" style="margin-top:6px" onclick="delStreak('+i+')">Remove</button></div></div><div class="dots">'+dots+'</div><button class="full'+(done?' ghost':'')+'" onclick="toggle('+i+')">'+(done?'✓ Done today (tap to undo)':'Mark today as done')+'</button></div>';
+  });
+  h+='<div class="card"><h2>➕ Add your own</h2><div class="gap" style="margin-top:0"><input id="ntxt" placeholder="e.g. No junk food, Walk 20 min" onkeydown="if(event.key===\'Enter\')addStreak()"><button onclick="addStreak()">Add</button></div></div>';
+  document.getElementById("streaks").innerHTML='<div class="sub" style="margin:0 2px 12px">Tap “Mark today as done” each day. Forgot a day? Tap that day in the row to add it, or tap again to remove it.</div>'+h;
+}
+function toggle(i){var t=ds(new Date()),d=state.streaks[i].days,x=d.indexOf(t);if(x>-1)d.splice(x,1);else d.push(t);save();renderStreaks();}
+function total(){return state.wish.log.reduce(function(a,b){return a+b.amt;},0);}
+function renderWish(){
+  var w=state.wish,t=total(),pct=w.target>0?Math.max(0,Math.min(100,t/w.target*100)):0,left=Math.max(0,w.target-t),hist="";
+  w.log.slice().reverse().slice(0,8).forEach(function(l){hist+='<li><span>'+esc(l.date)+'</span><span class="'+(l.amt<0?'neg':'')+'">'+(l.amt<0?'−':'+')+fmt(Math.abs(l.amt))+'</span></li>';});
+  var done=t>=w.target&&w.target>0;
+  document.getElementById("wish").innerHTML='<h2>🎯 Long wish</h2><input class="title-input" value="'+esc(w.name)+'" onchange="setName(this.value)" aria-label="Wish name"><div class="row"><div><span class="big">'+fmt(t)+'</span></div><div class="sub" style="text-align:right">of <input id="tg" type="number" inputmode="numeric" value="'+w.target+'" onchange="setTarget(this.value)" style="width:100px;display:inline-block;padding:6px 8px" aria-label="Target"></div></div><div class="bar"><div style="width:'+pct+'%"></div></div><div class="sub">'+(done?'🎉 You reached your goal!':fmt(left)+' left · '+Math.round(pct)+'% saved')+'</div><div class="gap"><input id="amt" type="number" inputmode="numeric" placeholder="Amount"><button onclick="addMoney(1)">Add</button><button class="ghost" onclick="addMoney(-1)">Take</button></div><ul class="hist">'+hist+'</ul>'+(w.log.length?'<div style="margin-top:10px"><button class="ghost small" onclick="undoLast()">Undo last</button></div>':'');
+}
+function setName(v){state.wish.name=v||"My wish";save();}
+function setTarget(v){state.wish.target=Math.max(0,Number(v)||0);save();renderWish();}
+function addMoney(sign){var el=document.getElementById("amt"),a=Math.abs(Number(el.value));if(!a)return;state.wish.log.push({amt:sign*a,date:ds(new Date())});save();renderWish();}
+function undoLast(){state.wish.log.pop();save();renderWish();}
+function showTab(t){
+  document.getElementById("streaks").style.display=t==='days'?'block':'none';
+  document.getElementById("wish").style.display=t==='wish'?'block':'none';
+  document.getElementById("tab-days").className=t==='days'?'active':'';
+  document.getElementById("tab-wish").className=t==='wish'?'active':'';
+}
+function renderTasks(){
+  var today=ds(new Date()),g="",t="",gd=0,td=0;
+  state.goals.forEach(function(x,i){var on=x.days.indexOf(today)>-1;if(on)gd++;g+='<li class="task'+(on?' done':'')+'"><label><input type="checkbox"'+(on?' checked':'')+' onchange="toggleGoal('+i+')"><span class="txt">'+esc(x.text)+'</span></label><button class="x" onclick="delGoal('+i+')" aria-label="Delete">✕</button></li>';});
+  state.todos.forEach(function(x,i){if(x.done)td++;t+='<li class="task'+(x.done?' done':'')+'"><label><input type="checkbox"'+(x.done?' checked':'')+' onchange="toggleTodo('+i+')"><span class="txt">'+esc(x.text)+'</span></label><button class="x" onclick="delTodo('+i+')" aria-label="Delete">✕</button></li>';});
+  var h='<div class="card"><div class="row"><h2>🔁 Daily goals</h2><span class="sub">'+gd+'/'+state.goals.length+' today</span></div><div class="sub" style="margin:-6px 0 8px">These repeat every day.</div><ul class="tl">'+(g||'<li class="sub">No daily goals yet.</li>')+'</ul><div class="gap"><input id="gtxt" placeholder="e.g. Walk 20 minutes" onkeydown="if(event.key===\'Enter\')addGoal()"><button onclick="addGoal()">Add</button></div></div>';
+  h+='<div class="card"><div class="row"><h2>📝 To-dos</h2><span class="sub">'+td+'/'+state.todos.length+' done</span></div><ul class="tl">'+(t||'<li class="sub">Nothing to do yet.</li>')+'</ul><div class="gap"><input id="ttxt" placeholder="e.g. Call the bank" onkeydown="if(event.key===\'Enter\')addTodo()"><button onclick="addTodo()">Add</button></div>'+(td?'<div style="margin-top:10px"><button class="ghost small" onclick="clearDone()">Clear finished</button></div>':'')+'</div>';
+  document.getElementById("tasks").innerHTML=h;
+}
+function addGoal(){var v=document.getElementById("gtxt").value.trim();if(!v)return;state.goals.push({text:v,days:[]});save();renderTasks();}
+function addTodo(){var v=document.getElementById("ttxt").value.trim();if(!v)return;state.todos.push({text:v,done:false});save();renderTasks();}
+function toggleGoal(i){var t=ds(new Date()),d=state.goals[i].days,x=d.indexOf(t);if(x>-1)d.splice(x,1);else d.push(t);save();renderTasks();}
+function toggleTodo(i){state.todos[i].done=!state.todos[i].done;save();renderTasks();}
+function delGoal(i){state.goals.splice(i,1);save();renderTasks();}
+function delTodo(i){state.todos.splice(i,1);save();renderTasks();}
+function clearDone(){state.todos=state.todos.filter(function(x){return !x.done;});save();renderTasks();}
+function wtotal(w){return w.log.reduce(function(a,b){return a+b.amt;},0);}
+function renderWish(){
+  var h="";
+  state.wishes.forEach(function(w,i){
+    var t=wtotal(w),pct=w.target>0?Math.max(0,Math.min(100,t/w.target*100)):0,left=Math.max(0,w.target-t),hist="";
+    w.log.slice().reverse().slice(0,5).forEach(function(l){hist+='<li><span>'+esc(l.date)+'</span><span class="'+(l.amt<0?'neg':'')+'">'+(l.amt<0?'−':'+')+fmt(Math.abs(l.amt))+'</span></li>';});
+    var done=t>=w.target&&w.target>0;
+    h+='<div class="card"><div class="row"><h2>🎯 Wish</h2><button class="ghost small" onclick="delWish('+i+')">Delete</button></div><input class="title-input" value="'+esc(w.name)+'" onchange="setName('+i+',this.value)" aria-label="Wish name"><div class="row"><div><span class="big">'+fmt(t)+'</span></div><div class="sub" style="text-align:right">of <input type="number" inputmode="numeric" value="'+w.target+'" onchange="setTarget('+i+',this.value)" style="width:100px;display:inline-block;padding:6px 8px" aria-label="Target"></div></div><div class="bar"><div style="width:'+pct+'%"></div></div><div class="sub">'+(done?'🎉 You reached your goal!':fmt(left)+' left · '+Math.round(pct)+'% saved')+'</div><div class="gap"><input id="amt'+i+'" type="number" inputmode="numeric" placeholder="Amount"><button onclick="addMoney('+i+',1)">Add</button><button class="ghost" onclick="addMoney('+i+',-1)">Take</button></div><ul class="hist">'+hist+'</ul>'+(w.log.length?'<div style="margin-top:10px"><button class="ghost small" onclick="undoLast('+i+')">Undo last</button></div>':'')+'</div>';
+  });
+  h+='<div class="card"><h2>➕ Add a wish</h2><input id="wname" placeholder="Wish name (e.g. Laptop)"><div class="gap"><input id="wtarget" type="number" inputmode="numeric" placeholder="Target amount"><button onclick="addWish()">Add</button></div></div>';
+  document.getElementById("wish").innerHTML=h;
+}
+function setName(i,v){state.wishes[i].name=v||"My wish";save();}
+function setTarget(i,v){state.wishes[i].target=Math.max(0,Number(v)||0);save();renderWish();}
+function addMoney(i,sign){var a=Math.abs(Number(document.getElementById("amt"+i).value));if(!a)return;state.wishes[i].log.push({amt:sign*a,date:ds(new Date())});save();renderWish();}
+function undoLast(i){state.wishes[i].log.pop();save();renderWish();}
+function delWish(i){state.wishes.splice(i,1);save();renderWish();}
+function addWish(){var n=document.getElementById("wname").value.trim(),t=Math.max(0,Number(document.getElementById("wtarget").value)||0);if(!n)return;state.wishes.push({name:n,target:t,log:[]});save();renderWish();}
+function toggleDay(i,k){var t=ds(back(k)),d=state.streaks[i].days,x=d.indexOf(t);if(x>-1)d.splice(x,1);else d.push(t);save();renderStreaks();}
+var mOff=0;
+function monthShift(n){mOff=Math.min(0,mOff+n);renderStreaks();}
+function toggleDate(i,y,mo,d){var t=ds(new Date(y,mo,d)),a=state.streaks[i].days,x=a.indexOf(t);if(x>-1)a.splice(x,1);else a.push(t);save();renderStreaks();}
+function norm(st){
+  if(!st||!st.streaks)st={streaks:[],wishes:[]};
+  if(!st.wishes)st.wishes=st.wish?[st.wish]:[];
+  (st.goals||[]).forEach(function(g,i){st.streaks.push({id:'g'+i+Date.now(),name:g.text,icon:'⭐',days:g.days||[]});});
+  st.goals=[];st.todos=st.todos||[];
+  return st;
+}
+function renderStreaks(){
+  var today=ds(new Date()),now=new Date(),first=new Date(now.getFullYear(),now.getMonth()+mOff,1),y=first.getFullYear(),mo=first.getMonth(),dim=new Date(y,mo+1,0).getDate(),lead=first.getDay(),pre=y+'-'+(mo+1<10?'0':'')+(mo+1)+'-';
+  var h='<div class="row" style="margin-bottom:10px"><button class="ghost small" onclick="monthShift(-1)" aria-label="Previous month">‹</button><b>'+first.toLocaleString([],{month:'long',year:'numeric'})+'</b><button class="ghost small" onclick="monthShift(1)"'+(mOff>=0?' disabled style="opacity:.4"':'')+' aria-label="Next month">›</button></div><div class="sub" style="margin:0 2px 12px">Tap “Mark today as done” each day. Forgot a day? Tap it in the calendar to add it, or tap again to remove it.</div>';
+  if(!state.streaks.length)h+='<div class="card sub">Nothing here yet. Add your first tracker below.</div>';
+  state.streaks.forEach(function(st,i){
+    var done=st.days.indexOf(today)>-1,cells='',mc=st.days.filter(function(x){return x.indexOf(pre)===0;}).length;
+    ['S','M','T','W','T','F','S'].forEach(function(w){cells+='<div class="cal-h">'+w+'</div>';});
+    for(var b=0;b<lead;b++)cells+='<div></div>';
+    for(var d=1;d<=dim;d++){var dt=ds(new Date(y,mo,d)),on=st.days.indexOf(dt)>-1;cells+='<button class="cal-d'+(on?' on':'')+(dt===today?' today':'')+'"'+(dt>today?' disabled':' onclick="toggleDate('+i+','+y+','+mo+','+d+')"')+'>'+d+'</button>';}
+    h+='<div class="card"><div class="row"><div><h2>'+st.icon+' '+esc(st.name)+'</h2><div><span class="big">'+streakOf(st.days)+'</span> <span class="sub">day streak</span></div></div><div class="sub" style="text-align:right">This month: '+mc+'<br>Total: '+st.days.length+'<br><button class="ghost small" style="margin-top:6px" onclick="delStreak('+i+')">Remove</button></div></div><div class="cal">'+cells+'</div><button class="full'+(done?' ghost':'')+'" onclick="toggle('+i+')">'+(done?'✓ Done today (tap to undo)':'Mark today as done')+'</button></div>';
+  });
+  h+='<div class="card"><h2>➕ Add your own</h2><div class="gap" style="margin-top:0"><input id="ntxt" placeholder="e.g. No junk food, Walk 20 min" onkeydown="if(event.keyCode==13)addStreak()"><button onclick="addStreak()">Add</button></div></div>';
+  document.getElementById('streaks').innerHTML=h;
+}
+var yMode=false,yOff=0;
+function viewBar(){return '<div class="tabs" style="margin-bottom:12px"><button class="'+(yMode?'':'active')+'" onclick="setView(false)">Month</button><button class="'+(yMode?'active':'')+'" onclick="setView(true)">Year</button></div>';}
+function setView(v){yMode=v;renderStreaks();}
+function yearShift(n){yOff=Math.min(0,yOff+n);renderStreaks();}
+function goMonth(m){var now=new Date();mOff=Math.min(0,yOff*12+m-now.getMonth());yMode=false;renderStreaks();window.scrollTo(0,0);}
+function renderYear(){
+  var now=new Date(),Y=now.getFullYear()+yOff,today=ds(now),mn=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var h=viewBar()+'<div class="row" style="margin-bottom:10px"><button class="ghost small" onclick="yearShift(-1)" aria-label="Previous year">‹</button><b>'+Y+'</b><button class="ghost small" onclick="yearShift(1)"'+(yOff>=0?' disabled style="opacity:.4"':'')+' aria-label="Next year">›</button></div><div class="sub" style="margin:0 2px 12px">Your whole year at a glance. Tap a month name to open it and add missed days.</div>';
+  if(!state.streaks.length)h+='<div class="card sub">Nothing here yet. Switch to Month to add your first tracker.</div>';
+  state.streaks.forEach(function(st){
+    var set={},grid='',yc=0;st.days.forEach(function(x){set[x]=1;if(x.indexOf(Y+'-')===0)yc++;});
+    for(var m=0;m<12;m++){
+      var dim=new Date(Y,m+1,0).getDate(),lead=new Date(Y,m,1).getDay(),mc=0,cells='';
+      for(var b=0;b<lead;b++)cells+='<i style="visibility:hidden"></i>';
+      for(var d=1;d<=dim;d++){var dt=ds(new Date(Y,m,d)),on=set[dt];if(on)mc++;cells+='<i class="'+(on?'on':'')+(dt===today?' today':'')+'"></i>';}
+      grid+='<div><button class="link" style="padding:0 0 4px;text-align:left;font-size:12px" onclick="goMonth('+m+')">'+mn[m]+' · '+mc+'</button><div class="yd">'+cells+'</div></div>';
+    }
+    h+='<div class="card"><div class="row"><h2 style="margin:0">'+st.icon+' '+esc(st.name)+'</h2><span class="sub">'+yc+' days in '+Y+'</span></div><div class="yg">'+grid+'</div></div>';
+  });
+  document.getElementById('streaks').innerHTML=h;
+}
+var _rs=renderStreaks;
+renderStreaks=function(){if(yMode){renderYear();return;}_rs();document.getElementById('streaks').insertAdjacentHTML('afterbegin',viewBar());};
+function saveCred(u,p){try{if(window.PasswordCredential&&navigator.credentials&&navigator.credentials.store){navigator.credentials.store(new PasswordCredential({id:u,password:p,name:u})).catch(function(){});}}catch(e){}}
+function addStreak(){var v=document.getElementById("ntxt").value.trim();if(!v)return;state.streaks.push({id:"s"+Date.now(),name:v,icon:"⭐",days:[]});save();renderStreaks();}
+function delStreak(i){state.streaks.splice(i,1);save();renderStreaks();}
+var mode='login',undoFn=null,toastT=null;
+function toast(msg,fn){undoFn=fn;var t=document.getElementById('toast');t.innerHTML='<span>'+esc(msg)+'</span><button onclick="doUndo()">Undo</button>';t.className='show';clearTimeout(toastT);toastT=setTimeout(function(){t.className='';undoFn=null;},8000);}
+function doUndo(){if(undoFn)undoFn();undoFn=null;document.getElementById('toast').className='';}
+function delWish(i){var w=state.wishes.splice(i,1)[0];save();renderWish();toast('Deleted “'+w.name+'”',function(){state.wishes.splice(i,0,w);save();renderWish();});}
+function delStreak(i){var s=state.streaks.splice(i,1)[0];save();renderStreaks();toast('Deleted “'+s.name+'”',function(){state.streaks.splice(i,0,s);save();renderStreaks();});}
+function getUsers(){try{return JSON.parse(localStorage.getItem('wdUsers2'))||{};}catch(e){return {};}}
+function authMsg(t){var m=document.getElementById('amsg');m.textContent=t;m.style.color='';}
+function setMode(m){mode=m;document.getElementById('abtn').textContent=m==='login'?'Log in':'Create account';document.getElementById('aswitch').textContent=m==='login'?'New here? Create an account':'Have an account? Log in';document.getElementById('asub').textContent=m==='login'?'Log in to continue.':'Create an account with your email. It stays on this device.';document.getElementById('auser').placeholder='Email (name@gmail.com)';adminMode=false;document.getElementById('apass').setAttribute('autocomplete',m==='login'?'current-password':'new-password');document.getElementById('aadmin').style.display=m==='login'?'block':'none';authMsg('');}
+async function hashPw(u,p){var s='wd|'+u+'|'+p;try{var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0');}).join('');}catch(e){var h=5381;for(var i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return 'f'+h;}}
+async function submitAuth(){
+  var u=document.getElementById('auser').value.trim().toLowerCase(),p=document.getElementById('apass').value;
+  if(!u||!p){authMsg('Enter your email and password.');return;}
+  var users=getUsers(),h=await hashPw(u,p);
+  if(mode==='signup'){
+    if(!/^[^\s@]+@gmail\.com$/.test(u)){authMsg('Email must end with @gmail.com');return;}
+    if(p.length<4){authMsg('Password needs at least 4 characters.');return;}
+    if(users[u]){authMsg('That email already has an account.');return;}
+    var first=Object.keys(users).length===0;
+    users[u]=h;try{localStorage.setItem('wdUsers2',JSON.stringify(users));}catch(e){}
+    if(first)try{localStorage.setItem('wdAdmin2',u);}catch(e){}
+    try{var mm=getMeta();mm[u]={created:Date.now(),count:0};localStorage.setItem('wdMeta2',JSON.stringify(mm));}catch(e){}saveCred(u,p);
+    if(u===adminName()){try{var old=localStorage.getItem('wishTrackerV2');if(old&&!localStorage.getItem('wishTrackerV2:'+u))localStorage.setItem('wishTrackerV2:'+u,old);}catch(e){}}
+    document.getElementById('apass').value='';
+    setMode('login');
+    document.getElementById('auser').value=u;
+    authMsg(u===adminName()?'Admin account created! Log in to continue.':'Account created! Please log in.');
+    document.getElementById('amsg').style.color='var(--accent)';
+  }else{
+    if(!users[u]||users[u]!==h){logEvent(u,false);authMsg('Wrong email or password.');return;}
+    if(isBanned(u)){logEvent(u,false);authMsg('This account has been banned. Contact the admin.');return;}
+    if(adminMode&&!isAdmin(u)){logEvent(u,false);authMsg('This is not an admin account.');return;}
+    logEvent(u,true);saveCred(u,p);enter(u,false);if(adminMode)openAdmin();
+  }
+}
+function norm(st){
+  if(!st||!st.streaks){st={streaks:[{id:'oil',name:'No oil',icon:'🫒',days:[]},{id:'sugar',name:'No sugar',icon:'🍬',days:[]}],wishes:[{name:'New phone',target:20000,log:[]}]};}
+  if(!st.wishes)st.wishes=[st.wish||{name:'New phone',target:20000,log:[]}];
+  (st.goals||[]).forEach(function(g,i){st.streaks.push({id:'g'+i+Date.now(),name:g.text,icon:'⭐',days:g.days||[]});});
+  st.goals=[];st.todos=st.todos||[];
+  return st;
+}
+function enter(u,adopt){
+  KEY='wishTrackerV2:'+u;
+  var raw=null,st=null;
+  try{raw=localStorage.getItem(KEY);if(!raw&&adopt)raw=localStorage.getItem('wishTrackerV2');}catch(e){}
+  try{st=raw?JSON.parse(raw):null;}catch(e){}
+  state=norm(st);save();
+  document.getElementById('apass').value='';authMsg('');
+  document.getElementById('auth').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('who').textContent='Logged in as '+u+' ·';curUser=u;document.getElementById('admbtn').style.display=isAdmin(u)?'inline-block':'none';
+  renderStreaks();renderWish();showTab('days');window.scrollTo(0,0);
+}
+function logout(){
+  document.getElementById('app').style.display='none';
+  document.getElementById('toast').className='';
+  document.getElementById('auser').value='';
+  document.getElementById('auth').style.display='flex';
+  setMode('login');
+}
+function delWish(i){var w=state.wishes.splice(i,1)[0];state.trash=state.trash||[];state.trash.unshift(w);state.trash=state.trash.slice(0,5);save();renderWish();toast('Deleted “'+w.name+'”',function(){var k=state.trash.indexOf(w);if(k>-1)state.trash.splice(k,1);state.wishes.splice(i,0,w);save();renderWish();});}
+var _rw=renderWish;
+renderWish=function(){
+  _rw();
+  var tr=state.trash||[];if(!tr.length)return;
+  var h='<div class="card"><h2>🗑️ Recently deleted</h2>';
+  tr.forEach(function(w,i){h+='<div class="task"><span class="txt">'+esc(w.name)+' · '+fmt(wtotal(w))+' saved</span><button class="ghost small" onclick="restoreWish('+i+')">Undo</button></div>';});
+  document.getElementById('wish').insertAdjacentHTML('beforeend',h+'</div>');
+};
+var curUser='';
+function getMeta(){try{return JSON.parse(localStorage.getItem('wdMeta2'))||{};}catch(e){return {};}}
+function getLog(){try{return JSON.parse(localStorage.getItem('wdLog2'))||[];}catch(e){return [];}}
+function logEvent(u,ok){try{var lg=getLog();lg.push({u:u,t:Date.now(),ok:ok});localStorage.setItem('wdLog2',JSON.stringify(lg.slice(-100)));if(ok){var m=getMeta();m[u]=m[u]||{created:Date.now(),count:0};m[u].last=Date.now();m[u].count=(m[u].count||0)+1;localStorage.setItem('wdMeta2',JSON.stringify(m));}}catch(e){}}
+function adminName(){return 'adwaithshylesh3@gmail.com';}
+function fmtT(t){try{return new Date(t).toLocaleString([],{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
+function openAdmin(){
+  if(curUser!==adminName())return;
+  var us=getUsers(),mt=getMeta(),lg=getLog().slice().reverse().slice(0,30),names=Object.keys(us);
+  var h='<h2 style="margin-top:14px">Accounts ('+names.length+')</h2>';
+  names.forEach(function(u){var m=mt[u]||{};h+='<div class="task"><span class="txt"><b>'+esc(u)+'</b>'+(u===adminName()?' · admin':'')+'<br><span class="sub">Joined '+(m.created?fmtT(m.created):'—')+' · '+(m.count||0)+' logins · last '+(m.last?fmtT(m.last):'never')+'</span></span></div>';});
+  h+='<h2 style="margin-top:16px">Recent logins</h2>';
+  if(!lg.length)h+='<div class="sub">No logins yet.</div>';
+  lg.forEach(function(l){h+='<div class="task"><span class="txt">'+esc(l.u)+'</span><span class="sub '+(l.ok?'':'neg')+'">'+(l.ok?'Logged in':'Failed')+' · '+fmtT(l.t)+'</span></div>';});
+  h+='<div class="sub" style="margin-top:14px">This list only shows accounts and logins made on this device.</div>';
+  document.getElementById('admbody').innerHTML=h;
+  document.getElementById('adm').style.display='block';
+}
+function closeAdmin(){document.getElementById('adm').style.display='none';}
+var adminMode=false;
+function setAdminMode(){setMode('login');adminMode=true;document.getElementById('asub').textContent='Admin login. Use the admin email and password.';document.getElementById('abtn').textContent='Admin log in';document.getElementById('aadmin').style.display='none';}
+function getBans(){try{return JSON.parse(localStorage.getItem('wdBans2'))||{};}catch(e){return {};}}
+function isBanned(u){return !!getBans()[u];}
+function setBanIdx(i,on){var u=Object.keys(getUsers())[i];if(!u||curUser!==adminName()||u===adminName())return;var b=getBans();if(on)b[u]=Date.now();else delete b[u];try{localStorage.setItem('wdBans2',JSON.stringify(b));}catch(e){}openAdmin();}
+function openAdmin(){
+  if(curUser!==adminName())return;
+  var us=getUsers(),mt=getMeta(),bn=getBans(),lg=getLog().slice().reverse().slice(0,30),names=Object.keys(us);
+  var h='<h2 style="margin-top:14px">Accounts ('+names.length+')</h2>';
+  names.forEach(function(u,i){var m=mt[u]||{},isA=u===adminName(),b=!!bn[u];h+='<div class="task"><span class="txt" style="flex:1"><b>'+esc(u)+'</b>'+(isA?' · admin':'')+(b?' · <span class="neg">banned</span>':'')+'<br><span class="sub">Joined '+(m.created?fmtT(m.created):'—')+' · '+(m.count||0)+' logins · last '+(m.last?fmtT(m.last):'never')+'</span></span>'+(isA?'':'<button class="ghost small" onclick="setBanIdx('+i+','+(b?'false':'true')+')">'+(b?'Unban':'Ban')+'</button>')+'</div>';});
+  h+='<h2 style="margin-top:16px">Recent logins</h2>';
+  if(!lg.length)h+='<div class="sub">No logins yet.</div>';
+  lg.forEach(function(l){h+='<div class="task"><span class="txt">'+esc(l.u)+'</span><span class="sub '+(l.ok?'':'neg')+'">'+(l.ok?'Logged in':'Failed')+' · '+fmtT(l.t)+'</span></div>';});
+  h+='<div class="sub" style="margin-top:14px">A ban takes effect the next time that person logs in. This list only shows accounts and logins made on this device.</div>';
+  document.getElementById('admbody').innerHTML=h;
+  document.getElementById('adm').style.display='block';
+}
+function getAdmins(){try{return JSON.parse(localStorage.getItem('wdAdmins2'))||[];}catch(e){return [];}}
+function isAdmin(u){return u===adminName()||getAdmins().indexOf(u)>-1;}
+function setBanIdx(i,on){var u=Object.keys(getUsers())[i];if(!u||!isAdmin(curUser)||isAdmin(u))return;var b=getBans();if(on)b[u]=Date.now();else delete b[u];try{localStorage.setItem('wdBans2',JSON.stringify(b));}catch(e){}openAdmin();}
+function setAdminIdx(i,on){var u=Object.keys(getUsers())[i];if(!u||curUser!==adminName()||u===adminName())return;var a=getAdmins().filter(function(x){return x!==u;});if(on)a.push(u);try{localStorage.setItem('wdAdmins2',JSON.stringify(a));}catch(e){}if(on){var b=getBans();delete b[u];try{localStorage.setItem('wdBans2',JSON.stringify(b));}catch(e){}}openAdmin();}
+function openAdmin(){
+  if(!isAdmin(curUser))return;
+  var owner=curUser===adminName(),us=getUsers(),mt=getMeta(),bn=getBans(),lg=getLog().slice().reverse().slice(0,30),names=Object.keys(us);
+  var h='<h2 style="margin-top:14px">Accounts ('+names.length+')</h2>';
+  names.forEach(function(u,i){var m=mt[u]||{},own=u===adminName(),adm=isAdmin(u),b=!!bn[u],btn='';
+    if(!adm)btn+='<button class="ghost small" onclick="setBanIdx('+i+','+(b?'false':'true')+')">'+(b?'Unban':'Ban')+'</button>';
+    if(owner&&!own)btn+='<button class="ghost small" onclick="setAdminIdx('+i+','+(adm?'false':'true')+')">'+(adm?'Remove admin':'Make admin')+'</button>';
+    h+='<div class="task"><span class="txt" style="flex:1"><b>'+esc(u)+'</b>'+(own?' · owner':adm?' · admin':'')+(b?' · <span class="neg">banned</span>':'')+'<br><span class="sub">Joined '+(m.created?fmtT(m.created):'—')+' · '+(m.count||0)+' logins · last '+(m.last?fmtT(m.last):'never')+'</span></span><span style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">'+btn+'</span></div>';});
+  h+='<h2 style="margin-top:16px">Recent logins</h2>';
+  if(!lg.length)h+='<div class="sub">No logins yet.</div>';
+  lg.forEach(function(l){h+='<div class="task"><span class="txt">'+esc(l.u)+'</span><span class="sub '+(l.ok?'':'neg')+'">'+(l.ok?'Logged in':'Failed')+' · '+fmtT(l.t)+'</span></div>';});
+  h+='<div class="sub" style="margin-top:14px">'+(owner?'Only you (the owner) can add or remove admins. ':'')+'A ban takes effect the next time that person logs in. This list only shows accounts and logins made on this device.</div>';
+  document.getElementById('admbody').innerHTML=h;
+  document.getElementById('adm').style.display='block';
+}
+function restoreWish(i){var w=state.trash.splice(i,1)[0];state.wishes.push(w);save();renderWish();}
+setMode(Object.keys(getUsers()).length?'login':'signup');
+</script>
+</body>
+</html>
