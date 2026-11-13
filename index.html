@@ -208,7 +208,7 @@ async function openAdmin(){
 
 // ---------- actions ----------
 const act={
-  google:async()=>{msg("");try{await signInWithPopup(auth,gp());}catch(e){if(e.code==="auth/popup-blocked"||e.code==="auth/operation-not-supported-in-this-environment")return signInWithRedirect(auth,gp());fail(e);}},
+  google:async()=>{msg("");try{await signInWithPopup(auth,gp());}catch(e){fail(e);}},
   sw:()=>setMode(mode==="login"?"signup":"login"),
   fp:async()=>{const em=$("auser").value.trim().toLowerCase();if(!em)return msg("Type your email first, then tap Forgot password.");try{await sendPasswordResetEmail(auth,em);msg("Reset link sent. Check your Gmail inbox and spam.",true);}catch(e){fail(e);}},
   out:()=>signOut(auth),
